@@ -902,12 +902,11 @@ focus_tree = {
 				name = special_forces_bonus
 				bonus = 1.0
 				uses = 1
-				technology = paratroopers
-				technology = paratroopers2
-				technology = marines
-				technology = marines2
-				technology = tech_mountaineers
-				technology = tech_mountaineers2
+				category = r56_jaeger_infantry_tech
+				category = r56_marines_infantry_tech
+				category = r56_mountain_infantry_tech
+				category = r56_paratroops_infantry_tech	
+				category = r56_shock_infantry_tech
 			}
 		}
 	}
@@ -1629,7 +1628,7 @@ focus_tree = {
 
 	focus = {
 		id = LAT_a_rejection_of_ulmanis
-		icon = GFX_focus_generic_support_the_left_right
+		icon = GFX_goal_LAT_reject_ulmanis
 		x = 44
 		y = 0
 		cost = 5
@@ -2169,13 +2168,14 @@ focus = {
 	}
 
 	completion_reward = {
-	  set_cosmetic_tag = BAL_UNIFIED
-	  13 = { add_core_of = ROOT }
-    191 = { add_core_of = ROOT }
+		set_cosmetic_tag = BAL_UNIFIED
+		13 = { add_core_of = ROOT }
+    	191 = { add_core_of = ROOT }
 		11 = { add_core_of = ROOT }
-    189 = { add_core_of = ROOT }
-    188 = { add_core_of = ROOT }
-  }
+    	189 = { add_core_of = ROOT }
+    	188 = { add_core_of = ROOT }
+    	784 = { add_core_of = ROOT }
+  	}
 }
 
 focus = {
@@ -2462,11 +2462,12 @@ focus = {
 	}
 
 	completion_reward = {
-	13 = { add_core_of = ROOT }
-	191 = { add_core_of = ROOT }
-	11 = { add_core_of = ROOT }
-	189 = { add_core_of = ROOT }
-	188 = { add_core_of = ROOT }
+		13 = { add_core_of = ROOT }
+		191 = { add_core_of = ROOT }
+		11 = { add_core_of = ROOT }
+		189 = { add_core_of = ROOT }
+		188 = { add_core_of = ROOT }
+		784 = { add_core_of = ROOT }
 	create_wargoal = {
 		target = EST
 		type = annex_everything
