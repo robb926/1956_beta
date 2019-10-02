@@ -3566,6 +3566,7 @@ focus_tree = {
 			focus = FRA_support_ppf
 			focus = FRA_state_reorganisation
 		}
+		will_lead_to_war_with = BEL
 		x = 33
 		y = 4
 			available = {
@@ -3644,6 +3645,9 @@ focus_tree = {
 		prerequisite = {
 			focus = FRA_demand_wallonia
 		}
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = HOL
+		will_lead_to_war_with = LUX
 		mutually_exclusive = {
 			focus = FRA_revise_versailles
 		}
@@ -4105,6 +4109,9 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
+		will_lead_to_war_with = LUX
+		will_lead_to_war_with = BEL
+		will_lead_to_war_with = HOL
 		completion_reward = {
 			add_state_claim = 34
 			add_state_claim = 6
@@ -4143,6 +4150,7 @@ focus_tree = {
 		ai_will_do = {
 			factor = 100
 		}
+		will_lead_to_war_with = ENG
 		completion_reward = {
 			add_named_threat = {
 							threat = 8
@@ -4173,6 +4181,7 @@ focus_tree = {
 			ai_will_do = {
 					factor = 100
 				}
+			will_lead_to_war_with = ITA
 			completion_reward = {
 					add_named_threat = {
 							threat = 5
@@ -5116,6 +5125,7 @@ focus_tree = {
 			ai_will_do = {
 					factor = 100
 				}
+			will_lead_to_war_with = SOV
 			completion_reward = {
 					create_wargoal = {
 							type = puppet_wargoal_focus
@@ -5137,6 +5147,7 @@ focus_tree = {
 			ai_will_do = {
 					factor = 100
 				}
+			will_lead_to_war_with = SWI
 			completion_reward = {
 					create_wargoal = {
 							type = annex_everything
@@ -5297,6 +5308,7 @@ focus_tree = {
 			bypass = {
 					has_war_with = GER
 				}
+			will_lead_to_war_with = GER
 			ai_will_do = {
 					factor = 50
 				}
@@ -5361,6 +5373,7 @@ focus_tree = {
 			ai_will_do = {
 					factor = 50
 				}
+			will_lead_to_war_with = GER
 			completion_reward = {
 					create_wargoal = {
 							type = puppet_wargoal_focus
@@ -5392,6 +5405,7 @@ focus_tree = {
 			ai_will_do = {
 					factor = 100
 				}
+			will_lead_to_war_with = ENG
 			completion_reward = {
 					create_wargoal = {
 							type = puppet_wargoal_focus
@@ -5551,7 +5565,7 @@ focus_tree = {
 		}
 		ai_will_do = {
 			factor = 100
-			}
+		}
 		completion_reward = {
 			if = {
 				limit = {
@@ -5611,6 +5625,7 @@ focus_tree = {
 				}
 			}
 		}
+		will_lead_to_war_with = GER
 		completion_reward = {
 			add_named_threat = {
 				threat = 7
