@@ -1,0 +1,908 @@
+focus_tree = {
+	id = bavaria_focus
+	country = {
+		factor = 0
+
+		modifier = {
+		add = 10
+		tag = BAV
+
+		}
+	}
+	
+
+##########################
+#### POLITICS SECTION ####
+##########################
+	focus = {
+		id = BAV_Open_Political_Sphere
+		icon = GFX_goal_support_communism
+		x = 27
+		y = 0
+		cost = 10
+
+		ai_will_do = {
+			factor = 1
+			}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+			}
+	}
+	focus = {
+		id = BAV_Soviet_Republic
+		icon = GFX_goal_support_communism
+		x = 23
+		y = 2
+
+		mutually_exclusive = {
+			focus = BAV_Democratic_Change
+			focus = BAV_Strengthen_the_Monarchy
+			focus = BAV_Bavarian_Ambitions
+		}
+		prerequisite = {
+			focus = BAV_Open_Political_Sphere
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 1.5
+			}
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+			add_popularity = {
+   				ideology = communism
+    			popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = BAV_Bavarian_Ambitions
+		icon = GFX_goal_GER_european_reich
+		x = 15
+		y = 2
+
+		mutually_exclusive = {
+			focus = BAV_Democratic_Change
+			focus = BAV_Strengthen_the_Monarchy
+			focus = BAV_Soviet_Republic
+		}
+		prerequisite = {
+			focus = BAV_Open_Political_Sphere
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 1.2
+			}
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+			add_popularity = {
+   				ideology = fascism
+    			popularity = 0.05
+			}
+		}
+	}
+	focus = {
+		id = BAV_Democratic_Change
+		icon = GFX_goal_generic_national_unity
+		x = 31
+		y = 2
+
+		mutually_exclusive = {
+			focus = BAV_Soviet_Republic
+			focus = BAV_Strengthen_the_Monarchy
+			focus = BAV_Bavarian_Ambitions
+		}
+		prerequisite = {
+			focus = BAV_Open_Political_Sphere
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 10
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 0.5
+			}
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+			add_popularity = {
+   				ideology = democratic
+    			popularity = 0.05
+		}
+		}
+	}
+	focus = {
+		id = BAV_Strengthen_the_Monarchy
+		icon = GFX_goal_tfv_strengthen_commonwealth_ties
+		x = 39
+		y = 2
+
+		mutually_exclusive = {
+			focus = BAV_Democratic_Change
+			focus = BAV_Soviet_Republic
+			focus = BAV_Bavarian_Ambitions
+		}
+		prerequisite = {
+			focus = BAV_Open_Political_Sphere
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 20
+			modifier = {
+				is_historical_focus_on = yes
+				factor = 2
+			}
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+			add_popularity = {
+   				ideology = non-aligend
+    			popularity = 0.05
+			}
+		}
+	}
+
+##########################
+### INDUSTRIES SECTION ###
+##########################
+	focus = {
+		id = BAV_Begin_Industrial_Rise
+		icon = GFX_focus_GRE_Combat_depression
+		cost = 5.00
+		x = 2
+		y = 3
+			ai_will_do = {
+					factor = 10
+					modifier = {
+							factor = 4
+							AND = {
+									num_of_factories < 30
+									date < 1939.1.1
+								}
+						}
+				}
+			completion_reward = {
+					53 = {
+							add_extra_state_shared_building_slots = 2
+						}
+					52 = {
+							add_extra_state_shared_building_slots = 2
+						}
+			}
+	}
+	focus = {
+		id = BAV_national_steelworks
+		icon = GFX_focus_generic_steel
+		cost = 8.00
+		prerequisite = {
+			focus = BAV_Begin_Industrial_Rise
+		}
+		x = 1
+		y = 5
+		available_if_capitulated = yes
+			ai_will_do = {
+					factor = 10
+			}
+			completion_reward = {		
+			}
+	}
+	focus = {
+		id = BAV_Factory_Expansions_1
+			icon = GFX_goal_generic_construct_civ_factory 
+			cost = 10.00
+			prerequisite = {
+			focus = BAV_Begin_Industrial_Rise
+			}
+			x = 3
+			y = 5
+			available_if_capitulated = no
+				ai_will_do = {
+						factor = 10
+						modifier = {
+							factor = 2
+							AND = {
+									num_of_factories < 35
+									date < 1940.1.1
+								}
+							}
+				}
+				completion_reward = {
+					54 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+							}
+					}
+					52 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+							}
+					}
+					53 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+							}
+					}
+				}
+	}
+	focus = {
+		id = BAV_Factory_Expansions_2
+			icon = GFX_goal_generic_construct_civ_factory 
+			cost = 10.00
+			prerequisite = {
+			focus = BAV_Factory_Expansions_1
+			}
+			x = 3
+			y = 6
+			available_if_capitulated = no
+				ai_will_do = {
+						factor = 10
+						modifier = {
+							factor = 2
+							AND = {
+									num_of_factories < 35
+									date < 1940.1.1
+								}
+							}
+				}
+				completion_reward = {
+					54 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+							}
+					}
+					52 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+							}
+					}
+					53 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = industrial_complex
+							level = 2
+							instant_build = yes
+							}
+					}
+				}
+	}
+	focus = {
+		id = BAV_Factory_Expansions_3
+			icon = GFX_goal_generic_construct_civ_factory 
+			cost = 10.00
+			prerequisite = {
+			focus = BAV_Factory_Expansions_2
+			}
+			x = 3
+			y = 7
+			available_if_capitulated = no
+				ai_will_do = {
+						factor = 10
+						modifier = {
+							factor = 2
+							AND = {
+									num_of_factories < 40
+									date < 1940.1.1
+								}
+							}
+				}
+				completion_reward = {
+					54 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+							}
+					}
+					52 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+							}
+					}
+					53 = {
+							add_extra_state_shared_building_slots = 1
+							add_building_construction = {
+							type = arms_factory
+							level = 2
+							instant_build = yes
+							}
+					}
+				}
+	}
+
+##########################
+### SOCIALIST SECTION ####
+##########################
+	focus = {
+		id = BAV_Alliance_with_Soviet_Union
+		icon = GFX_goal_support_communism
+		x = 24
+		y = 3
+
+		mutually_exclusive = {
+			focus = BAV_Create_our_own_faction
+		}
+		prerequisite = {
+			focus = BAV_Soviet_Republic
+		}
+		cost = 10.00
+		ai_will_do = {
+			factor = 20
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Create_our_own_faction
+		icon = GFX_goal_support_communism
+		x = 22
+		y = 3
+
+		mutually_exclusive = {
+			focus = BAV_Alliance_with_Soviet_Union
+		}
+		prerequisite = {
+			focus = BAV_Soviet_Republic
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Soviet_Advisors
+		icon = GFX_goal_support_communism
+		x = 24
+		y = 5
+		prerequisite = {
+			focus = BAV_Alliance_with_Soviet_Union
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 20
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Military_Cooperation
+		icon = GFX_goal_support_communism
+		x = 24
+		y = 6
+		prerequisite = {
+			focus = BAV_Soviet_Advisors
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Soviet_Technology
+		icon = GFX_goal_support_communism
+		x = 26
+		y = 6
+		prerequisite = {
+			focus = BAV_Soviet_Advisors
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Soviet_Investors
+		icon = GFX_goal_support_communism
+		x = 24
+		y = 7
+		prerequisite = {
+			focus = BAV_Military_Cooperation
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Bavarian_Advisors
+		icon = GFX_goal_support_communism
+		x = 22
+		y = 5
+		prerequisite = {
+			focus = BAV_Create_our_own_faction
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+
+#########################
+#### FASCIST SECTION ####
+#########################
+	focus = {
+		id = BAV_Defend_the_homeland
+		icon = GFX_goal_generic_fortify_city
+		x = 14
+		y = 3
+
+		mutually_exclusive = {
+		}
+		prerequisite = {
+			focus = BAV_Bavarian_Ambitions
+		}
+		cost = 10.00
+		ai_will_do = {
+			factor = 1
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+			add_building_construction = {
+										type = bunker
+										level = ^2
+										province = 13116
+										instant_build = yes
+			}
+			add_building_construction = {
+										type = bunker
+										level = 2
+										province = 11417
+										instant_build = yes
+			}
+			add_building_construction = {
+										type = bunker
+										level = 2
+										province = 6594
+										instant_build = yes
+			}
+			add_building_construction = {
+										type = bunker
+										level = 2
+										province = 9557
+										instant_build = yes
+			}
+		}
+	}
+	focus = {
+		id = BAV_Expand_Influence
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 3
+		prerequisite = {
+			focus = BAV_Bavarian_Ambitions
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Join_Axis
+		icon = GFX_goal_support_communism
+		x = 14
+		y = 4
+		prerequisite = {
+			focus = BAV_Expand_Influence
+		}
+		mutually_exclusive = {
+			focus= BAV_Rival_Germany
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Reclaim_southern_Lands
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 5
+		prerequisite = {
+			focus = BAV_Rival_Germany
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Rival_Germany
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 4
+		prerequisite = {
+			focus = BAV_Defend_the_homeland
+		}
+		mutually_exclusive = {
+			focus= BAV_Join_Axis
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Guarantee_Austrian_Independence
+		icon = GFX_goal_support_communism
+		x = 18
+		y = 6
+		prerequisite = {
+			focus = BAV_Rival_Germany
+		}
+		mutually_exclusive = {
+			focus= BAV_Reclaim_Tirol
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Reclaim_Tirol
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 6
+		prerequisite = {
+			focus = BAV_Reclaim_southern_Lands
+		}
+		mutually_exclusive = {
+			focus= BAV_Guarantee_Austrian_Independence
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Reclaim_South_Tirol
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 8
+		prerequisite = {
+			focus = BAV_Reclaim_Tirol
+		}
+		mutually_exclusive = {
+			focus= BAV_Italian_Cooperation
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Italian_Cooperation
+		icon = GFX_goal_support_communism
+		x = 18
+		y = 8
+		prerequisite = {
+			focus = BAV_Guarantee_Austrian_Independence focus = BAV_Reclaim_Tirol
+		}
+		mutually_exclusive = {
+			focus= BAV_Reclaim_South_Tirol
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Greater_Bavaria
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 9
+		prerequisite = {
+			focus = BAV_Reclaim_South_Tirol
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Spread_Influence_to_Europe
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 11
+		prerequisite = {
+			focus = BAV_Greater_Bavaria focus = BAV_Italian_Cooperation
+		}
+
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Invite_Hungary_to_faction
+		icon = GFX_goal_support_communism
+		x = 16
+		y = 12
+		prerequisite = {
+			focus = BAV_Spread_Influence_to_Europe
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Invite_Îtaly_to_faction
+		icon = GFX_goal_support_communism
+		x = 18
+		y = 12
+		prerequisite = {
+			focus = BAV_Spread_Influence_to_Europe
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_German_Military_Aid
+		icon = GFX_goal_support_communism
+		x = 14
+		y = 5
+		prerequisite = {
+			focus = BAV_Join_Axis
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_German_Investors
+		icon = GFX_goal_support_communism
+		x = 14
+		y = 6
+		prerequisite = {
+			focus = BAV_German_Military_Aid
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_German_Technolodgy
+		icon = GFX_goal_support_communism
+		x = 12
+		y = 7
+		prerequisite = {
+			focus = BAV_German_Investors
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Study_German_Aircrafts
+		icon = GFX_goal_support_communism
+		x = 12
+		y = 8
+		prerequisite = {
+			focus = BAV_German_Technolodgy
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Study_German_Tanks
+		icon = GFX_goal_support_communism
+		x = 10
+		y = 8
+		prerequisite = {
+			focus = BAV_German_Technolodgy
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+	focus = {
+		id = BAV_Study_German_Ships
+		icon = GFX_goal_support_communism
+		x = 8
+		y = 8
+		prerequisite = {
+			focus = BAV_German_Technolodgy
+		}
+		cost = 10
+		ai_will_do = {
+			factor = 1	
+		}
+		
+		available_if_capitulated = yes
+		
+		
+		completion_reward = {
+		}
+	}
+}
