@@ -182,7 +182,7 @@ create_country_leader = {
 	desc = "POLITICS_PE_SVINHUFVUD_DESC"
 	picture = "gfx/leaders/FIN/r56_portrait_FIN_PE_svinhufvud.dds"
 	expire = "1965.1.1"
-	ideology = liberalism
+	ideology = conservatism
 	traits = {
 		#
 	}
