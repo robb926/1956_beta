@@ -11,7 +11,7 @@
  BAV_communism:0 "Bavarian Council Republic"
  BAV_democratic:0 "Free State of Bavaria"
  BAV_neutrality:0 "Kingdom of Bavaria"
- BAV_fascism:0 "Bavaria" 
+ BAV_fascism:0 "Bavarian Reich" 
 
  #made panzerschrecks
  BAV_generic_infantry_equipment_manufacturer:0 "Schricker & Co."
