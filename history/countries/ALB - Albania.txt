@@ -34,7 +34,7 @@ create_country_leader = {
 	desc = "POLITICS_KING_ZOG_DESC"
 	picture = "Portrait_Albania_King_Zog.dds"
 	expire = "1965.1.1"
-	ideology = oligarchism
+	ideology = despotism
 	traits = {
 		#
 	}
@@ -67,7 +67,7 @@ create_country_leader = {
 	desc = ""
 	picture = "r56_portrait_ALB_Fan_S_Noli.dds"
 	expire = "1965.1.1"
-	ideology = conservatism
+	ideology = liberalism
 	traits = {
 		
 	}
